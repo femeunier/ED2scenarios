@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581092139490.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "271C88D7",
+    "lastKnownWriteTime" : 1581099275,
+    "last_content_update" : 1581099275987,
+    "path" : "~/R/ED2scenarios/R/write_job.R",
+    "project_path" : "R/write_job.R",
+    "properties" : {
+        "cursorPosition" : "7,41",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

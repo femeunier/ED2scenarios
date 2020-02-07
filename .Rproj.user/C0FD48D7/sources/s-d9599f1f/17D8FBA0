@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1581092161686.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "953196297",
+    "id" : "17D8FBA0",
+    "lastKnownWriteTime" : 1581099240,
+    "last_content_update" : 1581099240543,
+    "path" : "~/R/ED2scenarios/scripts/generate_scenarios.R",
+    "project_path" : "scripts/generate_scenarios.R",
+    "properties" : {
+        "cursorPosition" : "64,18",
+        "scrollLine" : "55"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
