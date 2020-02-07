@@ -1,10 +1,12 @@
 rm(list = ls())
 
 library(PEcAn.ED2)
+library(rlist)
+library(purrr)
 
 ref_dir <- "/home/carya/R/ED2scenarios/reference"
-rundir <- "/home/carya/R/ED2scenarios/run/"
-outdir <- "/home/carya/R/ED2scenarios/out/"
+rundir <- "/home/carya/R/ED2scenarios/run"
+outdir <- "/home/carya/R/ED2scenarios/out"
 
 ED2IN_ref <- file.path(ref_dir,"ED2IN")
 ed2in <- read_ed2in(ED2IN_ref)
@@ -24,6 +26,8 @@ names_climate <- c("ref","dry")
 
 if(!dir.exists(rundir)) dir.create(rundir)
 if(!dir.exists(outdir)) dir.create(outdir)
+
+list_dir <- list()
 
 for (iCO2 in seq(1,length(CO2))){
   for (idisturb in seq(1,length(disturbance))){
@@ -74,6 +78,13 @@ for (iCO2 in seq(1,length(CO2))){
                 CD = run_scenar,
                 ed_exec = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run/ed_2.1-opt",
                 ED2IN = "ED2IN")
+
+      list_dir[[name_scenar]]=run_scenar
     }
   }
 }
+
+
+dumb <- write_bash_submission(file = file.path(rundir,"all_jobs.sh"),
+                      list_files = list_dir,
+                      job_name = "job.sh")

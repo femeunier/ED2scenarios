@@ -1,0 +1,17 @@
+#!/bin/bash -l
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_ref_disturbance_ref_climate_ref
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_ref_disturbance_ref_climate_dry
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_ref_disturbance_elevated_climate_ref
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_ref_disturbance_elevated_climate_dry
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_elevated_disturbance_ref_climate_ref
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_elevated_disturbance_ref_climate_dry
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_elevated_disturbance_elevated_climate_ref
+qsub job.sh
+cd /home/carya/R/ED2scenarios/run//simulation_CO2_elevated_disturbance_elevated_climate_dry
+qsub job.sh

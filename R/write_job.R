@@ -16,13 +16,3 @@ write_job <- function(file = file.path(getwd(),"job.sh"),
   write("",file=file,append=TRUE)
   write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
 }
-
-
-
-
-
-  # ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited
-  #
-  # cd /user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run
-  #
-  # /user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run/ed_2.1-opt_prof -f ED2IN_bci_IC_hpc
