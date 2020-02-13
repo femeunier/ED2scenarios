@@ -17,8 +17,8 @@ names_CO2 <- c("ref","elevated")
 disturbance <- c(-0.0125,-0.015)
 names_disturbance <- c("ref","elevated")
 
-yeara <- c(2003,2003)
-yearz <- c(2016,2003)
+yeara <- c(2003,2004)
+yearz <- c(2016,2004)
 names_climate <- c("ref","dry")
 
 ################################################################
@@ -88,3 +88,5 @@ for (iCO2 in seq(1,length(CO2))){
 dumb <- write_bash_submission(file = file.path(rundir,"all_jobs.sh"),
                       list_files = list_dir,
                       job_name = "job.sh")
+
+
