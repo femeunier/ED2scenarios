@@ -18,6 +18,5 @@ write_joblauncher_noR <-
 
     write("",file=file,append=TRUE)
     write(paste("cd",CD),file=file,append=TRUE)
-    write("",file=file,append=TRUE)
     write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
   }
