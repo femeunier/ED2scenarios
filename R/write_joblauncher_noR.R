@@ -19,4 +19,9 @@ write_joblauncher_noR <-
     write("",file=file,append=TRUE)
     write(paste("cd",CD),file=file,append=TRUE)
     write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
+
+    ed2in <- read_ed2in(file.path(CD,ED2IN))
+    OPfiles <- ed2in$FFILOUT
+    CMD <- paste0("rm $(find ",dirname(OPfiles)," -name '*' ! -name '",paste0(basename(OPfiles),"-Q*-","01","-*"),"')")
+    write(CMD,file=file,append=TRUE)
   }
