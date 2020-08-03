@@ -4,17 +4,22 @@ write_joblauncher_Ronly <-
            prerun = "ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited",
            CD = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run",
            ED2IN = "ED2IN",
-           end.year = NULL,
+           date.end = NULL,
            Rplot_function = '/data/gent/vo/000/gvo00074/felicien/R/read_and_plot_ED2_Q2R_tspft.r',
            firstjob = TRUE){
 
     ed2in <- read_ed2in(file.path(CD,ED2IN))
     DN <- dirname(ed2in$FFILOUT)
     analy <- basename(ed2in$FFILOUT)
-    init <- paste(ed2in$IYEARA,sprintf('%02d',ed2in$IMONTHA),sprintf('%02d',ed2in$IDATEA),sep='/')
 
-    if (!is.null(end.year)){
-      end <- paste(end.year,sprintf('%02d',ed2in$IMONTHZ),sprintf('%02d',ed2in$IDATEZ),sep='/')
+    if (!is.null(date.init)){
+      init <- date.init
+    } else {
+      init <- paste(ed2in$IYEARA,sprintf('%02d',ed2in$IMONTHA),sprintf('%02d',ed2in$IDATEA),sep='/')
+    }
+
+    if (!is.null(date.end)){
+      end <- date.end
     } else {
       end <- paste(ed2in$IYEARZ,sprintf('%02d',ed2in$IMONTHZ),sprintf('%02d',ed2in$IDATEZ),sep='/')
     }
