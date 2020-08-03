@@ -31,7 +31,7 @@ write_joblauncher <-
 
     write("",file=file,append=TRUE)
     write(paste0("echo \"source(\'",Rplot_function,"\')"),file=file,append=TRUE)
-    write(paste0(Rplot_function,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
+    write(paste0(Rfunction,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
     write("\" | R --vanilla",file=file,append=TRUE)
 
     if (clean){
