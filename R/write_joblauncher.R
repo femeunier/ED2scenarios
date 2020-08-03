@@ -34,6 +34,7 @@ write_joblauncher <-
     write(paste0(Rfunction,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
     write("\" | R --vanilla",file=file,append=TRUE)
 
+
     if (clean){
       ed2in <- read_ed2in(file.path(CD,ED2IN))
       OPfiles <- ed2in$FFILOUT
