@@ -3,7 +3,7 @@ write_joblauncher_Ronly <-
            nodes = 1,ppn = 18,mem = 16,walltime = 24,
            prerun = "ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited",
            CD = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run",
-           ED2IN = "ED2IN",
+           ED2IN = "ED2IN",date.init = NULL,
            date.end = NULL,
            Rplot_function = '/data/gent/vo/000/gvo00074/felicien/R/read_and_plot_ED2_Q2R_tspft.r',
            firstjob = TRUE){
