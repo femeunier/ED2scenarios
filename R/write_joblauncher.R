@@ -9,6 +9,13 @@ write_joblauncher <-
            clean = FALSE,
            firstjob = TRUE){
 
+    ed2in <- read_ed2in(file.path(CD,ED2IN))
+    DN <- dirname(ed2in$FFILOUT)
+    analy <- basename(ed2in$FFILOUT)
+    init <- paste(ed2in$IYEARA,sprintf('%02d',ed2in$IMONTHA),sprintf('%02d',ed2in$IDATEA),sep='/')
+    end <- paste(ed2in$IYEARZ,sprintf('%02d',ed2in$IMONTHZ),sprintf('%02d',ed2in$IDATEZ),sep='/')
+    Rfunction <- tools::file_path_sans_ext(basename(Rplot_function))
+
     if (firstjob){
       writeLines("#!/bin/bash -l",con = file)
       write(paste0("#PBS -l nodes=",nodes,":ppn=",ppn),file=file,append=TRUE)
