@@ -1,4 +1,4 @@
-write_joblauncher_noR <-
+write_joblauncher <-
   function(file = file.path(getwd(),"job.sh"),
            nodes = 1,ppn = 18,mem = 16,walltime = 24,
            prerun = "ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited",
