@@ -19,7 +19,7 @@ write_joblauncher <-
       init <- paste(ed2in$IYEARA,sprintf('%02d',ed2in$IMONTHA),sprintf('%02d',ed2in$IDATEA),sep='/')
     }
 
-    if (!is.null(date.init)){
+    if (!is.null(date.end)){
       end <- date.end
     } else{
       end <- paste(ed2in$IYEARZ,sprintf('%02d',ed2in$IMONTHZ),sprintf('%02d',ed2in$IDATEZ),sep='/')
