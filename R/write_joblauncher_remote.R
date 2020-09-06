@@ -9,7 +9,7 @@ write_joblauncher_remote <-
            clean = FALSE,date.init = NULL,date.end = NULL,
            firstjob = TRUE){
 
-    ed2in <- read_ed2in(dirname(file))
+    ed2in <- read_ed2in(file.path(dirname(file),ED2IN))
     DN <- dirname(ed2in$FFILOUT)
     analy <- basename(ed2in$FFILOUT)
 
