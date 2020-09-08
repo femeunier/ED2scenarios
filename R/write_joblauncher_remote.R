@@ -1,5 +1,5 @@
 write_joblauncher_remote <-
-  function(file = file.path(getwd(),"job.sh"),
+  function(file = file.path(getwd(),"job.sh"),dirED2IN = NULL,
            nodes = 1,ppn = 18,mem = 16,walltime = 24,
            prerun = "ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited",
            CD = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run",
@@ -9,7 +9,12 @@ write_joblauncher_remote <-
            clean = FALSE,date.init = NULL,date.end = NULL,
            firstjob = TRUE){
 
-    ed2in <- read_ed2in(file.path(dirname(file),ED2IN))
+    if (is.null(dirED2IN = NULL)){
+      ed2in <- read_ed2in(file.path(dirname(file),ED2IN))
+    } else {
+      ed2in <- read_ed2in(file.path(dirED2IN,ED2IN))
+    }
+
     DN <- dirname(ed2in$FFILOUT)
     analy <- basename(ed2in$FFILOUT)
 
