@@ -9,7 +9,7 @@ write_joblauncher_remote <-
            clean = FALSE,date.init = NULL,date.end = NULL,
            firstjob = TRUE){
 
-    if (is.null(dirED2IN = NULL)){
+    if (is.null(dirED2IN)){
       ed2in <- read_ed2in(file.path(dirname(file),ED2IN))
     } else {
       ed2in <- read_ed2in(file.path(dirED2IN,ED2IN))
