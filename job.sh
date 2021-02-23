@@ -5,6 +5,6 @@
 
 ml UDUNITS/2.2.26-intel-2018a R/3.4.4-intel-2018a-X11-20180131 HDF5/1.10.1-intel-2018a; ulimit -s unlimited
 
-cd /home/carya/R/ED2scenarios/run//simulation_CO2_ref_disturbance_elevated_climate_ref
+cd /user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run
 
 /user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run/ed_2.1-opt -f ED2IN
