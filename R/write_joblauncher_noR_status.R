@@ -22,7 +22,7 @@ write_joblauncher_noR_status <-
 
     write("",file=file,append=TRUE)
     write(paste("cd",CD),file=file,append=TRUE)
-    write(paste("printf 'STARTED\n' > ",file.path(CD,"status.txt")),file=file,append=TRUE)
+    write(paste("printf 'STARTED\\n' > ",file.path(CD,"status.txt")),file=file,append=TRUE)
     write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
 
     ed2in <- read_ed2in(file.path(CD,ED2IN))
@@ -44,10 +44,10 @@ write_joblauncher_noR_status <-
     write("",file=file,append=TRUE)
 
     write("if [ $STATUS -ne 0 ]; then",file=file,append=TRUE)
-    error <- paste0("printf 'ERROR\n' >> ",file.path(CD,"status.txt"))
+    error <- paste0("printf 'ERROR\\n' >> ",file.path(CD,"status.txt"))
     write(error,file=file,append=TRUE)
     write("else",file=file,append=TRUE)
-    success <- paste0("printf 'SUCCESS\n' >> ",file.path(CD,"status.txt"))
+    success <- paste0("printf 'SUCCESS\\n' >> ",file.path(CD,"status.txt"))
     write(success,file=file,append=TRUE)
     write("  compt=$((compt+1))",file=file,append=TRUE)
     write("fi",file=file,append=TRUE)
