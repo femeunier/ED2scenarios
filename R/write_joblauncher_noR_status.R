@@ -6,7 +6,8 @@ write_joblauncher_noR_status <-
            ed_exec = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run/ed_2.1-opt",
            ED2IN = "ED2IN",
            firstjob = TRUE,
-           CD.main = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run"){
+           CD.main = "/user/scratchkyukon/gent/gvo000/gvo00074/felicien/ED2/ED/run",
+           remove = TRUE){
 
     if (firstjob){
       writeLines("#!/bin/bash -l",con = file)
@@ -28,7 +29,10 @@ write_joblauncher_noR_status <-
     ed2in <- read_ed2in(file.path(CD,ED2IN))
     OPfiles <- ed2in$FFILOUT
     CMD <- paste0("rm $(find ",dirname(OPfiles)," -name '*' ! -name '",paste0(basename(OPfiles),"-Q*-","01","-*"),"')")
-    write(CMD,file=file,append=TRUE)
+
+    if (remove){
+      write(CMD,file=file,append=TRUE)
+    }
 
     ifcond <- paste0("if [ $(grep -o '=== Time integration ends; Total elapsed time=' '",
                      file.path(CD.main,'logfile.txt'),
