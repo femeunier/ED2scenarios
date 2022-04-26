@@ -7,7 +7,8 @@ write_joblauncher <-
            ED2IN = "ED2IN",
            Rplot_function = '/data/gent/vo/000/gvo00074/felicien/R/read_and_plot_ED2_Q2R_tspft.r',
            clean = FALSE,date.init = NULL,date.end = NULL,
-           firstjob = TRUE){
+           firstjob = TRUE,
+           in.line = ''){
 
     ed2in <- read_ed2in(file.path(CD,ED2IN))
     DN <- dirname(ed2in$FFILOUT)
@@ -40,6 +41,7 @@ write_joblauncher <-
     write(paste("cd",CD),file=file,append=TRUE)
     write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
 
+    write(in.line,file=file,append=TRUE)
     write("",file=file,append=TRUE)
     write(paste0("echo \"source(\'",Rplot_function,"\')"),file=file,append=TRUE)
     write(paste0(Rfunction,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
