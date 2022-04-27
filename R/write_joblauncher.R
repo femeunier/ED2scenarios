@@ -8,7 +8,8 @@ write_joblauncher <-
            Rplot_function = '/data/gent/vo/000/gvo00074/felicien/R/read_and_plot_ED2_Q2R_tspft.r',
            clean = FALSE,date.init = NULL,date.end = NULL,
            firstjob = TRUE,
-           in.line = ''){
+           in.line = '',
+           reload = FALSE){
 
     ed2in <- read_ed2in(file.path(CD,ED2IN))
     DN <- dirname(ed2in$FFILOUT)
@@ -34,6 +35,9 @@ write_joblauncher <-
       write(paste0("#PBS -l mem=",mem,"gb"),file=file,append=TRUE)
       write(paste0("#PBS -l walltime=",walltime,":00:00"),file=file,append=TRUE)
       write("",file=file,append=TRUE)
+    }
+
+    if (reload == TRUE){
       write(prerun,file=file,append=TRUE)
     }
 
