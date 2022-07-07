@@ -27,7 +27,6 @@ write_joblauncher <-
       end <- paste(ed2in$IYEARZ,sprintf('%02d',ed2in$IMONTHZ),sprintf('%02d',ed2in$IDATEZ),sep='/')
     }
 
-    Rfunction <- tools::file_path_sans_ext(basename(Rplot_function))
 
     if (firstjob){
       writeLines("#!/bin/bash -l",con = file)
@@ -46,10 +45,14 @@ write_joblauncher <-
     write(paste(ed_exec,"-f",ED2IN),file=file,append=TRUE)
 
     write(in.line,file=file,append=TRUE)
-    write("",file=file,append=TRUE)
-    write(paste0("echo \"source(\'",Rplot_function,"\')"),file=file,append=TRUE)
-    write(paste0(Rfunction,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
-    write("\" | R --vanilla",file=file,append=TRUE)
+
+    if (!is.null(Rplot_function)){
+      Rfunction <- tools::file_path_sans_ext(basename(Rplot_function))
+      write("",file=file,append=TRUE)
+      write(paste0("echo \"source(\'",Rplot_function,"\')"),file=file,append=TRUE)
+      write(paste0(Rfunction,"(\'",DN,"\',\'",analy,"\',\'",init,"\',\'",end,"\')"),file=file,append=TRUE)
+      write("\" | R --vanilla",file=file,append=TRUE)
+    }
 
 
     if (clean){
