@@ -60,7 +60,7 @@ write_joblauncher <-
       OPfiles <- ed2in$FFILOUT
       OPfiles2 <- ed2in$SFILOUT
       CMD <- paste0("rm $(find ",paste0(OPfiles,"-Q-*")," -name '*' ! -name '",paste0(basename(OPfiles),"-Q*-","01","-*"),"')")
-      CMD2 <- paste0("rm $(find ",paste0(OPfiles2,"-S-*")," -name '*' ! -name '",paste0(basename(OPfiles2),"-S*-","01","-*"),"')")
+      CMD2 <- paste0("rm $(find ",paste0(OPfiles2,"-S-*")," -name '*' ! -name '",paste0(basename(OPfiles2),"-S*-","01-01","-*"),"')")
       write(CMD,file=file,append=TRUE)
       write(CMD2,file=file,append=TRUE)
     }
